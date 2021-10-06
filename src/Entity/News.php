@@ -25,18 +25,24 @@ class News
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"news"})
+     * @Assert\NotNull
+     * @Assert\Type("string")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
      * @Groups({"news"})
+     * @Assert\NotNull
+     * @Assert\Type("string")
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"news"})
+     * @Assert\NotNull
+     * @Assert\Type("datetime")
      */
     private $date;
 
