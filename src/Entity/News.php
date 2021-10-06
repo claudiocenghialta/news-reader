@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use App\Repository\NewsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=NewsRepository::class)
+ * @ApiResource(itemOperations={"get","delete","patch"},collectionOperations={"get","post"},normalizationContext={"groups"={"news"}})
  */
 class News
 {
@@ -19,16 +24,19 @@ class News
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"news"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"news"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"news"})
      */
     private $date;
 
