@@ -41,6 +41,16 @@ symfony server:start
 http://127.0.0.1:8000/api/
 
 ## login
+api for the login
+
+```bash
+curl --location --request POST 'http://127.0.0.1:8000/api/login_check' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"username": "admin@reader.news",
+"password": "adminPassword"
+}'
+```
 
 ### admin user
 
