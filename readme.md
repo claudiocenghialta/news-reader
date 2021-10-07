@@ -26,6 +26,10 @@ load data fixtures (user & news)
 ```bash
 php bin/console doctrine:fixtures:load
 ```
+generate the hey pair for jwt
+```bash
+php bin/console lexik:jwt:generate-keypair
+```
 
 ## start the project
 ```bash
