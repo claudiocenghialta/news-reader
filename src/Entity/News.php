@@ -11,7 +11,18 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NewsRepository::class)
- * @ApiResource(itemOperations={"get","delete","patch"},collectionOperations={"get","post"},normalizationContext={"groups"={"news"}})
+ * @ApiResource(
+ *      itemOperations={
+ *          "get",
+ *          "delete"={"security"="is_granted('ROLE_USER')"},
+ *          "patch"={"security"="is_granted('ROLE_USER')"}
+ *      },
+ *      collectionOperations={
+ *          "get",
+ *          "post"={"security"="is_granted('ROLE_USER')"}
+ *      },
+ *      normalizationContext={"groups"={"news"}}
+ * )
  */
 class News
 {
