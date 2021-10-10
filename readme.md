@@ -46,7 +46,7 @@ The token has to be passed to the api in the header as 'Bearer XXXXXX'
 api for the login (to create the Bearer toker)
 
 ```bash
-curl --location --request POST 'http://127.0.0.1:8000/api/login_check' \
+curl --location --request POST 'http://127.0.0.1:8000/api/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "username": "admin@reader.news",
