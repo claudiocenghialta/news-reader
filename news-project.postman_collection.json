@@ -1,0 +1,752 @@
+{
+	"info": {
+		"_postman_id": "c1be974e-186e-4c14-bfe1-0c92ca4b7813",
+		"name": "news-project",
+		"description": "# Authentication\n\n<!-- ReDoc-Inject: <security-definitions> -->",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/news",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Retrieves a News resource.",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "(Required) Resource identifier"
+										}
+									]
+								},
+								"description": "Retrieves a News resource."
+							},
+							"response": [
+								{
+									"name": "News resource",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/ld+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"nulla aute commodo\",\n \"content\": \"veniam in eiusmod\",\n \"date\": \"1987-07-02T03:46:46.889Z\",\n \"@context\": \"commodo aute dolore\",\n \"@id\": \"proident consequat c\",\n \"@type\": \"do occaecat enim tempor\"\n}"
+								},
+								{
+									"name": "Resource not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Removes the News resource.",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "(Required) Resource identifier"
+										}
+									]
+								},
+								"description": "Removes the News resource."
+							},
+							"response": [
+								{
+									"name": "News resource deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Resource not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Updates the News resource.",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/merge-patch+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/news/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "(Required) Resource identifier"
+										}
+									]
+								},
+								"description": "Updates the News resource."
+							},
+							"response": [
+								{
+									"name": "News resource updated",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/ld+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"title\": \"nulla aute commodo\",\n \"content\": \"veniam in eiusmod\",\n \"date\": \"1987-07-02T03:46:46.889Z\",\n \"@context\": \"commodo aute dolore\",\n \"@id\": \"proident consequat c\",\n \"@type\": \"do occaecat enim tempor\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Resource not found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unprocessable entity",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/news/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"news",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieves the collection of News resources.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/news?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"news"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "The collection page number"
+								}
+							]
+						},
+						"description": "Retrieves the collection of News resources."
+					},
+					"response": [
+						{
+							"name": "News collection",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/news?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"hydra:member\": [\n  {\n   \"title\": \"do irure sit\",\n   \"content\": \"dolor ut\",\n   \"date\": \"1989-10-19T14:54:29.903Z\",\n   \"@context\": \"dolore ipsum officia\",\n   \"@id\": \"ut\",\n   \"@type\": \"minim\"\n  },\n  {\n   \"title\": \"officia fugiat\",\n   \"content\": \"voluptate id fugiat sunt\",\n   \"date\": \"1949-08-31T16:50:10.448Z\",\n   \"@context\": \"amet aliqua enim\",\n   \"@id\": \"pari\",\n   \"@type\": \"do eu sunt\"\n  }\n ],\n \"hydra:totalItems\": 12501100,\n \"hydra:view\": {\n  \"@id\": \"consectetur culpa laborum\",\n  \"@type\": \"mollit dolore\",\n  \"hydra:first\": \"amet exercitation quis Excepteur tempor\",\n  \"hydra:last\": \"fugiat commodo\",\n  \"hydra:previous\": \"fugiat non sed proident magna\",\n  \"hydra:next\": \"in non et ea in\"\n },\n \"hydra:search\": {\n  \"@type\": \"enim\",\n  \"hydra:template\": \"in Lorem occaecat consectetur\",\n  \"hydra:variableRepresentation\": \"in sit est\",\n  \"hydra:mapping\": [\n   {\n    \"@type\": \"in\",\n    \"variable\": \"consectetur dolor\",\n    \"property\": \"in eu laborum\",\n    \"required\": true\n   },\n   {\n    \"@type\": \"adipisicing a\",\n    \"variable\": \"nulla\",\n    \"property\": \"ullamco in\",\n    \"required\": true\n   }\n  ]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Creates a News resource.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"prova\",\n    \"content\": \"testo di prova\",\n    \"date\": \"2021-10-10T20:38:04.235Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/news",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"news"
+							]
+						},
+						"description": "Creates a News resource."
+					},
+					"response": [
+						{
+							"name": "News resource created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/news",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"title\": \"nulla aute commodo\",\n \"content\": \"veniam in eiusmod\",\n \"date\": \"1987-07-02T03:46:46.889Z\",\n \"@context\": \"commodo aute dolore\",\n \"@id\": \"proident consequat c\",\n \"@type\": \"do occaecat enim tempor\"\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/news",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unprocessable entity",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"tem\",\n    \"content\": \"minim consectetur\",\n    \"date\": \"2016-12-28T20:38:04.235Z\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/news",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"news"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{bearer token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@reader.news\",\r\n    \"password\": \"adminPassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "bearer token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzM5MDAzMDksImV4cCI6MTYzMzkwMzkwOSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AcmVhZGVyLm5ld3MifQ.UzFCjkcMQiys4jfp7ljML3Ks1O_H-ervBGJqUMKTu8ulJ1vQVfKK6pjQOOtaDOiWONDIJLBlUTuTCKS_WM8MXOcVDrF447EyNiiHmcMxyrOqt8PHEDbNAzeSERWxqaM2Gy8Ywanms-DKsbiobY0odibZxD1zhjlBYDlzAH3kqaS2BNZQLe_rNb2nto1WN1sIO8Z8BYOBm84q8A_EqUEmoE4427VC9vilqu64zunu1RJH8JuTaAZQIsCyN5nZNqQhBRSGGisT8N8Vmzg5aZlO5L-NYlvkYQmmFJm6UuXYhThY0IEUSKGsB9JObaD_EZfDyqdslZoLHjy9CrX2O8Gh-g"
+		}
+	]
+}
