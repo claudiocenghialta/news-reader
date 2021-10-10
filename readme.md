@@ -39,9 +39,11 @@ symfony server:start
 
 ### Api documentation can be readed at the following link
 http://127.0.0.1:8000/api/
+Except for the get collection of news and get item news, the other apis needs an authorization token that can be created following the instruction at the next paragraph.
+The token has to be passed to the api in the header as 'Bearer XXXXXX'
 
 ## login
-api for the login
+api for the login (to create the Bearer toker)
 
 ```bash
 curl --location --request POST 'http://127.0.0.1:8000/api/login_check' \
